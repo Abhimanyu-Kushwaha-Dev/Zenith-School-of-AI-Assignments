@@ -6,10 +6,32 @@
 3) Find average price
 4) Filter products with high sales (sales>5)
 """
+
+"""
+data.csv= 
+product	price	sales
+Laptop	50000	5
+Phone	2000	10
+Tablet	1500	7
+Headphones	2000	25
+Monitor	12000	6
+Keyboard	1500	20
+Mouse	800	30
+"""
 import pandas as pd
+from io import StringIO
 
-df = pd.read_csv("data.csv")
+csv_data = """product,price,sales
+Laptop,50000,5
+Phone,2000,10
+Tablet,1500,7
+Headphones,2000,25
+Monitor,12000,6
+Keyboard,1500,20
+Mouse,800,30
+"""
 
+df = pd.read_csv(StringIO(csv_data))
 df["revenue"] = df["price"] * df["sales"]
 total_revenue = df["revenue"].sum()
 print("Total revenue is:", total_revenue)
