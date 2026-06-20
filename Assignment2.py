@@ -30,6 +30,7 @@ Monitor,12000,6
 Keyboard,1500,20
 Mouse,800,30
 """
+# df = pd.read_csv("data.csv")
 
 df = pd.read_csv(StringIO(csv_data))
 df["revenue"] = df["price"] * df["sales"]
